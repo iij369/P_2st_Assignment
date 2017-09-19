@@ -3,42 +3,42 @@
 int checkprime(int n);
 int checkarm(int n);
 int main(){
-	int select,n,n1;
-	int a,b,i,flag;
+	int n;
+	int a,b,i,prime;
 	printf("1.Display prime numbers between inervals using function.\n");
 	printf("2.Check prime of Armstrong number using user-defined function.\n");
 	printf("3.Check whether a number can be expressed as sum of two prime numbers.\n");
-	printf("¹øÈ£¸¦ °í¸£½Ã¿À.:");
+	printf("ë²ˆí˜¸ë¥¼ ê³ ë¥´ì‹œì˜¤.:");
 	scanf("%d",&n);
 	while((n<1)||(n>3))
 	{
-		printf("´Ù½Ã´©¸£½Ã¿À\n");
+		printf("ë‹¤ì‹œëˆ„ë¥´ì‹œì˜¤\n");
 		printf("1.Display prime numbers between inervals using function.\n");
 		printf("2.Check prime of Armstrong number using user-defined function.\n");
 		printf("3.Check whether a number can be expressed as sum of two prime numbers.\n");
-		printf("¹øÈ£¸¦ °í¸£½Ã¿À.:");
+		printf("ë²ˆí˜¸ë¥¼ ê³ ë¥´ì‹œì˜¤.:");
 		scanf("%d",&n);
 	}
 	if(n==1){
 
-	printf("µÎ°³ÀÇ ¼Ò¼öÀÔ·Â:");
+	printf("ë‘ê°œì˜ ì†Œìˆ˜ì…ë ¥:");
 	scanf_s("%d %d",&a,&b);
-	printf("µÎ ¼Ò¼ö %d¿Í %d»çÀÌÀÇ ¼Ò¼öµéÀº:",a,b);
+	printf("ë‘ ì†Œìˆ˜ %dì™€ %dì‚¬ì´ì˜ ì†Œìˆ˜ë“¤ì€:",a,b);
 	for(i=a+1; i<b; ++i){
-		flag=checkprime(i);
-		if(flag==1)
+		prime=checkprime(i);
+		if(prime==1)
 			printf("% d",i);
 	}
 	}
 	if(n==2){
-		printf("Á¤¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À:");
+		printf("ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤:");
 		scanf("%d",&n1);
 		checkprime(n1);
 		checkarm(n1);
 	}
 	if(n==3)
 	{
-		printf("Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä:");
+		printf("ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”:");
 		scanf("%d",&n1);
 		for(i=2; i<=n1/2; ++i)
 		{
@@ -47,42 +47,42 @@ int main(){
 				if(checkprime(n-1)==1)
 				{
 					printf("%d=%d+%d\n",n,i,n-i);
-					flag=1;
+					prime=1;
 				}
 			}
 		}
 	}
-	if(flag==0)
+	if(pirme==0)
 	{
-		printf("%d´Â µÎ°³ÀÇ ¼Ò¼öÀÇ ÇÕÀ¸·Î Ç¥ÇöµÉ ¼ö ¾ø½À´Ï´Ù.",n);
+		printf("%dëŠ” ë‘ê°œì˜ ì†Œìˆ˜ì˜ í•©ìœ¼ë¡œ í‘œí˜„ë  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.",n);
 	}
 return 0;
 }
 int checkprime(int n){
-	int j,flag=1;
+	int j,prime=1;
 	for(j=2; j<=n/2; ++j){
 		if(n%j==0)
 		{
-			flag=0;
+			prime=0;
 			break;
 		}
 	}
 	return flag;
 }
 int main(){
-int n,flag;
-printf("¼Ò¼öÀÔ·Â:");
+int n,prime;
+printf("ì†Œìˆ˜ì…ë ¥:");
 scanf("%d",&n);
-flag=checkprime(n);
-if(flag==1)
-	printf("%d´Â ¼Ò¼öÀÌ´Ù\n",n);
+prime=checkprime(n);
+if(pirme==1)
+	printf("%dëŠ” ì†Œìˆ˜ì´ë‹¤\n",n);
 else
-	printf("%d´Â ¼Ò¼ö°¡¾Æ´Ï´Ù\n",n);
-flag=checkarm(n);
-if(flag==1)
-	printf("%dÀº armstrong numberÀÌ´Ù.\n",n);
+	printf("%dëŠ” ì†Œìˆ˜ê°€ì•„ë‹ˆë‹¤\n",n);
+pirme=checkarm(n);
+if(prime==1)
+	printf("%dì€ armstrong numberì´ë‹¤.\n",n);
 else 
-	printf("%dÀº armstrong number°¡ ¾Æ´Ï´Ù.\n",n);
+	printf("%dì€ armstrong numberê°€ ì•„ë‹ˆë‹¤.\n",n);
 return 0;
 }
 int checkarm(int number){
